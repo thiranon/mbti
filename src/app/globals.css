@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -7,6 +9,82 @@
   }
 
   body {
-    @apply bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900;
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-indigo-100 selection:text-indigo-900;
   }
+}
+
+/* Automatic Dark Mode theme adaptation for cards, surfaces, borders, and typography */
+html.dark main .bg-white,
+html.dark main .bg-white\/95,
+html.dark main .bg-white\/90 {
+  background-color: #0f172a !important;
+}
+
+html.dark main .bg-slate-50,
+html.dark main .bg-slate-100 {
+  background-color: #1e293b !important;
+}
+
+html.dark main .from-purple-50,
+html.dark main .from-emerald-50,
+html.dark main .from-sky-50,
+html.dark main .from-amber-50 {
+  --tw-gradient-from: #0f172a !important;
+  --tw-gradient-via: #111827 !important;
+  --tw-gradient-to: #1e293b !important;
+}
+
+html.dark main .bg-indigo-50,
+html.dark main .bg-indigo-50\/70,
+html.dark main .bg-indigo-50\/50,
+html.dark main .bg-indigo-50\/10,
+html.dark main .bg-emerald-50\/60,
+html.dark main .bg-emerald-50\/50,
+html.dark main .bg-emerald-50\/70,
+html.dark main .bg-amber-50,
+html.dark main .bg-amber-50\/60,
+html.dark main .bg-amber-50\/70,
+html.dark main .bg-rose-50,
+html.dark main .bg-rose-50\/80,
+html.dark main .bg-rose-50\/70,
+html.dark main .bg-rose-50\/50,
+html.dark main .bg-sky-50\/70 {
+  background-color: rgba(30, 41, 59, 0.75) !important;
+}
+
+html.dark main .border-slate-200,
+html.dark main .border-slate-200\/90,
+html.dark main .border-slate-200\/80,
+html.dark main .border-slate-200\/70,
+html.dark main .border-slate-200\/60,
+html.dark main .border-slate-100,
+html.dark main .border-slate-300 {
+  border-color: #334155 !important;
+}
+
+html.dark main .text-slate-900,
+html.dark main .text-indigo-950,
+html.dark main .text-emerald-950,
+html.dark main .text-emerald-900,
+html.dark main .text-amber-900,
+html.dark main .text-rose-950 {
+  color: #f8fafc !important;
+}
+
+html.dark main .text-slate-800,
+html.dark main .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+html.dark main .text-slate-600,
+html.dark main .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark main .fill-slate-800 {
+  fill: #f1f5f9 !important;
+}
+
+html.dark main .fill-slate-500 {
+  fill: #94a3b8 !important;
 }
